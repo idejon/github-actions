@@ -12,7 +12,8 @@ jobs:
           echo $date
       - name: Checkout
       - uses: actions/checkout@v2
-      - uses: - uses: actions/upload-artifact@v2
-        with:
+      - uses: actions/upload-artifact@v2
+      -name: Upload Artifact
+       with:
           name: ${{ env.ARTIFACT_NAME }}
           path: /
