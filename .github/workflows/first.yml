@@ -1,0 +1,32 @@
+name: First Exercise
+on: [push]
+jobs:
+  Print-Date-Ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Date
+        run: |
+          printf -v date '%(%Y-%m-%d %H:%M:%S)T\n' -1
+          echo $date
+  Print-Date-Windows:
+      runs-on: windows-latest
+      steps:
+        - name: Print Date
+          run: |
+            $date = Get-Date -Format u
+            Write-Output $date
+  Print-Date-Mac:
+    runs-on: macos-latest
+    steps:
+      - name: Print Date
+        run: |
+          printf -v date '%(%Y-%m-%d %H:%M:%S)T\n' -1
+          echo $date
+  Print-Date-Last:
+    runs-on: windows-latest
+    needs: [Print-Date-Ubuntu, Print-Date-Windows, Print-Date-Mac]
+    steps:
+      - name: Print Date
+        run: |
+          $date = Get-Date -Format u
+          Write-Output $date
