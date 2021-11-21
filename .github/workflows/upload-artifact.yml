@@ -10,10 +10,12 @@ jobs:
         run: |
           printf -v date '%(%Y-%m-%d %H:%M:%S)T\n' -1
           echo $date
+
       - name: Checkout
       - uses: actions/checkout@v2
+
+      - name: Upload Artifact
       - uses: actions/upload-artifact@v2
-      -name: Upload Artifact
-       with:
+        with:
           name: ${{ env.ARTIFACT_NAME }}
           path: /
