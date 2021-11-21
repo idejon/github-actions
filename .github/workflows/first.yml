@@ -20,8 +20,7 @@ jobs:
     steps:
       - name: Print Date
         run: |
-          printf -v date '%(%Y-%m-%d %H:%M:%S)T\n' -1
-          echo $date
+           date '+%Y/%m/%d %H:%M:%S'
   Print-Date-Last:
     runs-on: windows-latest
     needs: [Print-Date-Ubuntu, Print-Date-Windows, Print-Date-Mac]
