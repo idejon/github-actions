@@ -1,7 +1,7 @@
 name: Upload Artifact
 env:
   ARTIFACT_NAME: 'Example_Artifact'
-  ARTIFACT_ROOT: ${{ GITHUB_WORKSPACE }}
+  ARTIFACT_ROOT: ${{ github.workspace }}
 on: [push]
 jobs:
   Checkout-Upload:
