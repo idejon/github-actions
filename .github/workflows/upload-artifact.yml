@@ -3,14 +3,9 @@ env:
   ARTIFACT_NAME: 'Example_Artifact'
 on: [push]
 jobs:
-  Print-Date-Ubuntu:
+  Checkout-Upload:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Date
-        run: |
-          printf -v date '%(%Y-%m-%d %H:%M:%S)T\n' -1
-          echo $date
-
       - name: Checkout
       - uses: actions/checkout@v2
 
