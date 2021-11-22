@@ -1,0 +1,21 @@
+name: Custom Action
+
+on: [push]
+env:
+  ARTIFACT_NAME: 'Python_Artifact'
+  ARTIFACT_ROOT: ${{ github.workspace }}
+jobs:
+  test:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - run: |
+          python hello.py        
+
+  action:
+    needs: [test]
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Custom Action
+        uses: idejon/custom-action@master
+        with:
