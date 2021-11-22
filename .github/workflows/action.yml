@@ -17,4 +17,4 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Custom Action
-        uses: idejon/custom-action@master
+        uses: idejon/custom-action@master 
